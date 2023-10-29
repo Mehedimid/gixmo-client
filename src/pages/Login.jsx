@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import Navbar from "../Components/Navbar";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import { AuthContext } from "../AuthProvider";
 
 function Login(props) {
