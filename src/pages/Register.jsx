@@ -1,10 +1,61 @@
-import React from "react";
-import Navbar from "../Components/Navbar";
+import React, { useContext, useState } from "react";
+import Navbar from "../components/Navbar";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import auth from "../firebase/firebase.config";
 
 function Register(props) {
-    const handleRegister = e =>{
-        e.preventDefault()
+  const { createUser , googleHandler} = useContext(AuthContext);
+  const navigate = useNavigate()
+  const provider = new GoogleAuthProvider()
+  // console.log(createUser)
+
+
+  //====== Log in with google =====
+  const googleHandler = () =>{
+    signInWithPopup(auth, provider)
+    .then(result => {
+      toast.success('wow!!! Successfully Registered!!')
+    })
+    .catch(error => toast.error(error.message))
+  }
+
+
+  // ===== log in with email and pass =====
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    // condition
+    const uppercase = /[A-Z]/.test(password);
+    const hasSpecialCharacter = /[!@#$%^&*]/.test(password);
+    if (password.length < 6) {
+      toast.error("error: password must be 8 character");
+      return;
+    } else if (!uppercase) {
+      toast.error("error: password need uppercase");
+      return;
+    } else if (!hasSpecialCharacter) {
+      toast.error("error : no special charachter");
+      return;
     }
+
+
+    createUser(email, password)
+      .then((res) => {
+        console.log(res.user);
+        toast.success('wow!!! Successfully Registered!!')
+        e.target.email.value = ''
+        e.target.password.value = ""
+        // navigate('/')
+      })
+      .catch((error) => toast.error(error.message));
+  };
+
   return (
     <>
       <div className="bg-black bg-opacity-90">
@@ -17,15 +68,12 @@ function Register(props) {
         <h1 className="text-3xl font-bold my-6 text-center text-black">
           Register Your Account
         </h1>
-
-
-        {/* photo url  */}
         <div className="  gap-10 ">
           <div className="w-full">
             <h2 className="text-lg mb-2 text-slate-700">email:</h2>
             <input
               type="email"
-              placeholder="type email url"
+              placeholder="type email "
               name="email"
               className="border p-2  w-full border-black rounded"
             />
@@ -34,7 +82,7 @@ function Register(props) {
             <h2 className="text-lg mb-2 text-slate-700">password:</h2>
             <input
               type="password"
-              placeholder="type password url"
+              placeholder="type password "
               name="password"
               className="border p-2  w-full border-black rounded"
             />
@@ -48,6 +96,14 @@ function Register(props) {
             Register
           </button>
         </div>
+        <div className="flex justify-evenly mb-5 items-center">
+              <p className="inline">Already Registered?</p>
+              <Link
+                to="/login"
+                className="underline text-orange-600 font-semibold text-xl">
+                Log In
+              </Link>
+            </div>
       </form>
     </>
   );

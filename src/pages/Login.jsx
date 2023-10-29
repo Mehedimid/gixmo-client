@@ -6,8 +6,6 @@ function Login(props) {
     <>
       <div className="bg-black bg-opacity-90">
         <Navbar></Navbar>
-
-        
       </div>
     </>
   );
