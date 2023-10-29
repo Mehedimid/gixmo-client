@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "service_name": "Global",
+      "img": "https://static.thenounproject.com/png/1410841-200.png",
+      "description": "Our global services connect you with the latest in electronics from around the world, providing a vast selection of top brands and cutting-edge technology."
+    },
+    {
+      "id": 2,
+      "service_name": "Call Desk",
+      "img": "https://static.thenounproject.com/png/4195274-200.png",
+      "description": "Our call desk services offer reliable support and assistance, ensuring you have access to expert advice and solutions for your electronic needs."
+    },
+    {
+      "id": 3,
+      "service_name": "Trusted",
+      "img": "https://static.thenounproject.com/png/1410841-200.png",
+      "description": "We are a trusted source for high-quality electronics, offering top brands like Apple, Google, Sony, and more, backed by a commitment to quality and excellence."
+    },
+    {
+      "id": 4,
+      "service_name": "Efficient",
+      "img": "https://static.thenounproject.com/png/5308592-200.png",
+      "description": "Our efficient services are designed to streamline your experience, making it easier and faster to explore and acquire the latest electronic innovations."
+    }
+  ]
+  
