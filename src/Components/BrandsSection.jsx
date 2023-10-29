@@ -18,7 +18,7 @@ function BrandsSection(props) {
         {brands.length
           ? brands.map((brand) => (
               <div
-                key={brand.key}
+                key={brand.id}
                 className="shadow-2xl  rounded shadow-slate-600">
                 <div className="card-body bg-red-100 p-2  ">
                   <h2 className="card-title text-3xl">{brand.brand_name}</h2>

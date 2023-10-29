@@ -1,7 +1,18 @@
-import React from "react";
-import {  NavLink } from "react-router-dom";
+import React, { useContext } from "react";
+import { NavLink } from "react-router-dom";
+import { AuthContext } from "../AuthProvider";
 
 function Navbar(props) {
+  const { user , logOut} = useContext(AuthContext);
+  
+  const handleLogOut = () => {
+    logOut()
+    .then(result => {
+      // logged out 
+    })
+    .catch(error=> console.log(error.message))
+  }
+
   const navlinks = (
     <>
       <NavLink to="/">Home</NavLink>
@@ -49,16 +60,28 @@ function Navbar(props) {
           </h1>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 gap-4 text-base">{navlinks}</ul>
+          <ul className="menu menu-horizontal px-1 gap-4 text-base">
+            {navlinks}
+          </ul>
         </div>
         <div className="navbar-end">
           {/* <Link to='/register' className="btn btn-error text-white">Sign Up</Link> */}
-          <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-        <div className="w-10 rounded-full">
-          <img className="bg-white" src={"https://i.ibb.co/kKjDBkF/profile.png"} />
-        </div>
-      </label>
-      <p className="text-white">    </p>
+
+
+          {user ? (
+            <div className="space-x-1">
+              <p className="text-white inline"> {user?.email}</p>
+              <button onClick={handleLogOut} className="border border-red-500 text-red-500 rounded hover:btn-error">
+                Log Out
+              </button>
+            </div>
+          ) : (
+            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+            <div className="rounded-full">
+              <img className="bg-white" src={"https://i.ibb.co/kKjDBkF/profile.png"} />
+            </div>
+          </label>
+          )}
         </div>
       </div>
     </div>

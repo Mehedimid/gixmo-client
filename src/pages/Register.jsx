@@ -1,27 +1,27 @@
-import React, { useContext, useState } from "react";
-import Navbar from "../components/Navbar";
-import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../AuthProvider/AuthProvider";
+import { useContext } from "react";
+import Navbar from "../Components/Navbar";
+import { AuthContext } from "../AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import auth from "../firebase/firebase.config";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { Link } from "react-router-dom";
+
+import { FcGoogle } from 'react-icons/fc';
+
 
 function Register(props) {
-  const { createUser , googleHandler} = useContext(AuthContext);
-  const navigate = useNavigate()
+  const {createUser}= useContext(AuthContext)
   const provider = new GoogleAuthProvider()
-  // console.log(createUser)
 
-
-  //====== Log in with google =====
-  const googleHandler = () =>{
-    signInWithPopup(auth, provider)
-    .then(result => {
-      toast.success('wow!!! Successfully Registered!!')
-    })
-    .catch(error => toast.error(error.message))
-  }
+    //====== Log in with google =====
+    const googleHandler = () =>{
+      signInWithPopup(auth, provider)
+      .then(result => {
+        toast.success('wow!!! Successfully Registered!!')
+      })
+      .catch(error => toast.error(error.message))
+    }
 
 
   // ===== log in with email and pass =====
@@ -29,6 +29,7 @@ function Register(props) {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
+    console.log(email, password)
 
     // condition
     const uppercase = /[A-Z]/.test(password);
@@ -44,7 +45,7 @@ function Register(props) {
       return;
     }
 
-
+    
     createUser(email, password)
       .then((res) => {
         console.log(res.user);
@@ -54,7 +55,8 @@ function Register(props) {
         // navigate('/')
       })
       .catch((error) => toast.error(error.message));
-  };
+
+  }
 
   return (
     <>
@@ -62,12 +64,19 @@ function Register(props) {
         <Navbar></Navbar>
       </div>
 
+      <h1 className="text-3xl font-bold my-6 text-center text-black">
+        Register Your Account
+      </h1>
+
+      <div className="mt-5 flex justify-center">
+        <button onClick={googleHandler} className="btn btn-ghost  btn-outline  w-3/12 ">
+        <span className="text-2xl"> <FcGoogle/></span> Login with Google
+        </button>
+      </div>
+
       <form
         onSubmit={handleRegister}
         className="border w-11/12 md:w-7/12 mb-20 mx-auto bg-neutral-700 shadow-xl bg-opacity-10 space-y-6 mt-12 md:px-16 py-5">
-        <h1 className="text-3xl font-bold my-6 text-center text-black">
-          Register Your Account
-        </h1>
         <div className="  gap-10 ">
           <div className="w-full">
             <h2 className="text-lg mb-2 text-slate-700">email:</h2>
@@ -97,13 +106,12 @@ function Register(props) {
           </button>
         </div>
         <div className="flex justify-evenly mb-5 items-center">
-              <p className="inline">Already Registered?</p>
-              <Link
-                to="/login"
-                className="underline text-orange-600 font-semibold text-xl">
-                Log In
-              </Link>
-            </div>
+          <p className="inline">Already Registered?</p>
+          <Link to="/login" className="underline  font-semibold text-xl">
+            Log In
+          </Link>
+        </div>
+        <ToastContainer ></ToastContainer>
       </form>
     </>
   );

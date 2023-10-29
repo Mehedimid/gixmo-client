@@ -14,6 +14,7 @@ import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
 import AddProduct from './pages/AddProduct.jsx';
 import AuthProvider from './AuthProvider.jsx';
+import PrivateRoute from './Private route/PrivateRoute.jsx';
 
 const router = createBrowserRouter([
   {
@@ -27,11 +28,11 @@ const router = createBrowserRouter([
       },
       {
         path:'/addproduct',
-        element:<AddProduct></AddProduct>
+        element:<PrivateRoute><AddProduct></AddProduct></PrivateRoute>
       },
       {
         path:'/mycart',
-        element:<MyCart></MyCart>
+        element:<PrivateRoute><MyCart></MyCart> </PrivateRoute>
       },
       {
         path:'/login',
