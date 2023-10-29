@@ -58,7 +58,7 @@ function Navbar(props) {
           <img className="bg-white" src={"https://i.ibb.co/kKjDBkF/profile.png"} />
         </div>
       </label>
-      <p className="text-white">Myname@gamil.com</p>
+      <p className="text-white">    </p>
         </div>
       </div>
     </div>

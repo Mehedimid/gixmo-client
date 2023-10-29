@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "./Navbar";
+import { Link } from "react-router-dom";
 
 function Header(props) {
   return (
@@ -27,7 +28,7 @@ function Header(props) {
 
             "Experience the future of tech with us! Discover an exclusive world of cutting-edge electronics and irresistible offers. Dive into innovation, shop with confidence, and elevate your tech game. Your dreams, our reality – shop now!"
             </p>
-            <button className="btn btn-error">Get Registered</button>
+           <Link to='/register'> <button className="btn btn-error">Get Registered</button></Link>
           </div>
         </div>
       </div>
