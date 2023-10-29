@@ -15,7 +15,7 @@ function Services(props) {
       <h1 className="text-2xl md:text-4xl mx-auto w-10/12 my-10 font-bold text-red-400 max-w-fit bg-red-500 rounded-xl  py-2 px-5 bg-opacity-10">
         SERVICES
       </h1>
-      <div className="md:flex w-10/12 mx-auto gap-3 border">
+      <div className="md:flex w-10/12 mx-auto gap-3 ">
         {services.map((service) => (
           <div key={service.id} className="">
             <div className="card  bg-red-100  shadow-xl">

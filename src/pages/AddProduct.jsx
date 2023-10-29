@@ -14,6 +14,20 @@ function AddProduct(props) {
    const photo = form.photo.value
    const product = {name, brand, price, description, type, rating, photo}
    console.log(product)
+
+   fetch('http://localhost:5000/products',
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(product)
+        })
+        .then(res=>res.json())
+        .then(data=> {
+          console.log(data)
+        })
+
   }
   return (
     <div>
