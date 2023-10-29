@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function BrandsSection(props) {
   const [brands, setBrands] = useState([]);
@@ -17,7 +18,7 @@ function BrandsSection(props) {
       <section className="grid grid-cols-1 md:grid-cols-3 gap-10 w-10/12  mx-auto ">
         {brands.length
           ? brands.map((brand) => (
-              <div
+              <Link to='/brandproduct'
                 key={brand.id}
                 className="shadow-2xl  rounded shadow-slate-600">
                 <div className="card-body bg-red-100 p-2  ">
@@ -32,7 +33,7 @@ function BrandsSection(props) {
                     />
                   </figure>
                 </div>
-              </div>
+              </Link>
             ))
           : ""}
       </section>

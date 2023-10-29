@@ -15,6 +15,7 @@ import Register from './pages/Register.jsx';
 import AddProduct from './pages/AddProduct.jsx';
 import AuthProvider from './AuthProvider.jsx';
 import PrivateRoute from './Private route/PrivateRoute.jsx';
+import BrandProduct from './Components/BrandProduct.jsx';
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path:'/register',
         element:<Register></Register>
+      },
+      {
+        path:'/brandproduct',
+        element:<BrandProduct></BrandProduct>
       }
     ]
   },
