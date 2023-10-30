@@ -12,7 +12,7 @@ function Details(props) {
   const cartInfo = { name, brand, price, description, type, rating, photo, useremail} 
 
   const handleAddCart = () => {
-    fetch('http://localhost:5000/cart',
+    fetch(`http://localhost:5000/cart`,
     {
       method: "POST",
       headers: {
