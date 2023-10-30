@@ -1,10 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import { Link, useLoaderData } from "react-router-dom";
 
-function BrandProduct({ brandName }) {
-  const loadedProducts = useLoaderData();
-  console.log(brandName);
+function BrandProduct() {
+  const loadedProducts = useLoaderData()
+  const [products, setProducts] = useState(loadedProducts)
+
+useEffect(() => {
+  const filterProducts = loadedProducts.filter(item => item.brand == 'google' );
+  setProducts(filterProducts)
+}, [])
+
+
+
   return (
     <>
       <div className="bg-black bg-opacity-90">
@@ -62,9 +70,10 @@ function BrandProduct({ brandName }) {
       {/* ========== products ======== */}
       <section className="my-24 mx-auto w-10/12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {loadedProducts.length &&
-            loadedProducts.map((product) => (
-              <div className="card card-side justify-center items-center lg:flex-row flex-col shadow-xl bg-orange-600 bg-opacity-10 p-2 ">
+          {
+          products.length &&
+            products.map((product) => (
+              <div key={product._id} className="card card-side justify-center items-center lg:flex-row flex-col shadow-xl bg-orange-600 bg-opacity-10 p-2 ">
                 <div className="lg:w-2/5 ">
                   <img
                     className="min-w-full h-[200px] "
@@ -79,7 +88,7 @@ function BrandProduct({ brandName }) {
                   <div className="flex flex-col justify-center pl-2 space-y-2 ">
                     <h2 className="card-title">{product.name}</h2>
                     <p>Brand: {product.brand}</p>
-                    <p className="text-sm">Look:{product.description}</p>
+                    <p className="text-sm">Description:{product.description}</p>
 
                     <p className="">price: {product.price}$</p> <span>rating: {product.rating}*</span>
                   </div>
@@ -87,7 +96,7 @@ function BrandProduct({ brandName }) {
                     <div className="btn-group gap-2 btn-group-vertical">
                     <p className="bg-secondary text-white p-2 rounded-full w-fit">{product.type}</p>
                     <Link to={`/details/${product._id}`}>
-                    <button className="btn btn-active">Details</button>
+                    <button className="btn btn-primary">Details</button>
                     </Link>
                       <Link
                         className="btn btn-accent"

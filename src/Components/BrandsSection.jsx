@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, Navigate, Route, Router } from "react-router-dom";
-import BrandProduct from "./BrandProduct";
+
 
 function BrandsSection(props) {
   const [brands, setBrands] = useState([]);
@@ -10,9 +10,7 @@ function BrandsSection(props) {
       .then((res) => res.json())
       .then((data) => setBrands(data));
   }, []);
-  const handleSend = () => {
-   return <BrandProduct brandName={brands.brand_name}></BrandProduct>
-  }
+ 
 
   return (
 
@@ -24,8 +22,8 @@ function BrandsSection(props) {
         {brands.length
           ? brands.map((brand) => (
               <Link
-               to={{pathname:"/brandproduct"}}
-              //  to="/brandproduct"
+              //  to={{pathname:"/brandproduct"}}
+               to="/brandproduct"
                 key={brand.id}
                 className="shadow-2xl  rounded shadow-slate-600">
                 <div className="card-body bg-red-100 p-2  ">
