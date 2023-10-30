@@ -6,10 +6,10 @@ function BrandProduct() {
   const loadedProducts = useLoaderData()
   const [products, setProducts] = useState(loadedProducts)
 
-useEffect(() => {
-  const filterProducts = loadedProducts.filter(item => item.brand == 'google' );
-  setProducts(filterProducts)
-}, [])
+// useEffect(() => {
+//   const filterProducts = loadedProducts.filter(item => item.brand.toLowerCase() === 'google' );
+//   setProducts(filterProducts)
+// }, [])
 
 
 
@@ -20,7 +20,7 @@ useEffect(() => {
       </div>
 
       {/* ======= sliders ====== */}
-      <div className="my-20">
+      <div className="mb-20">
         <div className="carousel w-full">
           <div id="slide1" className="carousel-item relative w-full">
             <img
@@ -69,9 +69,12 @@ useEffect(() => {
 
       {/* ========== products ======== */}
       <section className="my-24 mx-auto w-10/12">
+      <h1 className="text-2xl md:text-4xl my-10 font-bold text-red-400 max-w-fit bg-red-500 rounded-xl mx-auto py-2 px-5 bg-opacity-10">
+        Our All Available Products
+      </h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {
-          products.length &&
+          products.length ?
             products.map((product) => (
               <div key={product._id} className="card card-side justify-center items-center lg:flex-row flex-col shadow-xl bg-orange-600 bg-opacity-10 p-2 ">
                 <div className="lg:w-2/5 ">
@@ -87,7 +90,7 @@ useEffect(() => {
                 <div className="flex flex-row">
                   <div className="flex flex-col justify-center pl-2 space-y-2 ">
                     <h2 className="card-title">{product.name}</h2>
-                    <p>Brand: {product.brand}</p>
+                    <p>Brand: <span className="font-bold"> {product.brand}</span></p>
                     <p className="text-sm">Description:{product.description}</p>
 
                     <p className="">price: {product.price}$</p> <span>rating: {product.rating}*</span>
@@ -100,19 +103,17 @@ useEffect(() => {
                     </Link>
                       <Link
                         className="btn btn-accent"
-                        to={`/updatecoffee/${product._id}`}>
-                        <button className="uppercase">edit</button>
+                        to={`/products/${product._id}`}>
+                        <button className="uppercase">Update</button>
                       </Link>
-                      {/* <button
-                        className="btn btn-error"
-                        onClick={() => handleDel(_id)}>
-                        delete
-                      </button> */}
+     
                     </div>
                   </div>
                 </div>
               </div>
-            ))}
+            )) : <div className="my-24 mx-auto w-10/12 text-red-500">
+            <h1 className="text-center font-bold text-4xl">No product available</h1>
+          </div>}
         </div>
       </section>
     </>

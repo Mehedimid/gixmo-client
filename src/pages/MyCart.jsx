@@ -78,7 +78,9 @@ function MyCart(props) {
                 </div>
               </div>
             </div>
-          )) : ''}
+          )) : <div className="my-24 mx-auto w-10/12 text-red-500">
+            <h1 className="text-center font-bold text-4xl">No product available</h1>
+          </div> }
       </div>
     </>
   );
