@@ -16,6 +16,7 @@ import AddProduct from './pages/AddProduct.jsx';
 import AuthProvider from './AuthProvider.jsx';
 import PrivateRoute from './Private route/PrivateRoute.jsx';
 import BrandProduct from './Components/BrandProduct.jsx';
+import Details from './Components/Details.jsx';
 
 const router = createBrowserRouter([
   {
@@ -45,7 +46,13 @@ const router = createBrowserRouter([
       },
       {
         path:'/brandproduct',
-        element:<BrandProduct></BrandProduct>
+        element:<BrandProduct></BrandProduct>,
+        loader:()=>fetch('http://localhost:5000/products')
+      },
+      {
+        path:'/details/:id',
+        // loader:({params})=>fetch()
+        element:<Details></Details>
       }
     ]
   },
