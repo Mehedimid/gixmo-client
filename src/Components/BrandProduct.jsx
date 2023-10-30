@@ -9,7 +9,7 @@ function BrandProduct(props) {
       </div>
 
       {/* ======= sliders ====== */}
-      <div>
+      <div className="my-20">
         <div className="carousel w-full">
           <div id="slide1" className="carousel-item relative w-full">
             <img
@@ -53,7 +53,6 @@ function BrandProduct(props) {
               </a>
             </div>
           </div>
-  
         </div>
       </div>
     </>

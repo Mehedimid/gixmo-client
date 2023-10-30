@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../Components/Navbar";
+import Swal from 'sweetalert2'
 
 function AddProduct(props) {
   const handleAdd = e =>{
@@ -26,6 +27,15 @@ function AddProduct(props) {
         .then(res=>res.json())
         .then(data=> {
           console.log(data)
+          if(data.insertedId){
+            Swal.fire({
+              title: 'Success!!',
+              text: 'Successfully added Product!!',
+              icon: 'success',
+              confirmButtonText: 'Cool'
+            })
+            e.target.reset()
+          }
         })
 
   }
@@ -45,7 +55,8 @@ function AddProduct(props) {
           <div className=" md:flex gap-10 ">
             <div className="md:w-1/2">
               <h2 className="text-lg mb-2 text-slate-700">Name:</h2>
-              <input
+              <input 
+              required
                 type="text"
                 placeholder=" Name"
                 name="name"
@@ -54,7 +65,8 @@ function AddProduct(props) {
             </div>
             <div className="  md:w-1/2">
               <h2 className="text-lg mb-2 text-slate-700">Brand:</h2>
-              <input
+              <input 
+              required
                 type="text"
                 placeholder="your Brand"
                 name="brand"
@@ -66,7 +78,8 @@ function AddProduct(props) {
           <div className=" md:flex gap-10 ">
             <div className="md:w-1/2">
               <h2 className="text-lg mb-2 text-slate-700">Type:</h2>
-              <input
+              <input 
+              required
                 type="text"
                 placeholder="Type"
                 name="type"
@@ -76,7 +89,8 @@ function AddProduct(props) {
 
             <div className="  md:w-1/2">
               <h2 className="text-lg mb-2 text-slate-700">price:</h2>
-              <input
+              <input 
+              required
                 type="text"
                 placeholder="price"
                 name="price"
@@ -88,7 +102,8 @@ function AddProduct(props) {
           <div className=" md:flex gap-10 ">
             <div className="md:w-1/2">
               <h2 className="text-lg mb-2 text-slate-700">Description:</h2>
-              <input
+              <input 
+              required
                 type="text"
                 placeholder="Type description"
                 name="description"
@@ -97,7 +112,8 @@ function AddProduct(props) {
             </div>
             <div className="  md:w-1/2">
               <h2 className="text-lg mb-2 text-slate-700">Rating:</h2>
-              <input
+              <input 
+              required
                 type="text"
                 placeholder="rating"
                 name="rating"
@@ -109,7 +125,8 @@ function AddProduct(props) {
           <div className=" md:flex gap-10 ">
             <div className="w-full">
               <h2 className="text-lg mb-2 text-slate-700">Photo:</h2>
-              <input
+              <input 
+              required
                 type="text"
                 placeholder="type photo url"
                 name="photo"
