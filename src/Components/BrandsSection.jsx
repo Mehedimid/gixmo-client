@@ -10,6 +10,11 @@ function BrandsSection(props) {
       .then((res) => res.json())
       .then((data) => setBrands(data));
   }, []);
+
+  // const handleGet = (brand) => {
+  //   fetch(`http://localhost:5000/products/${brand}`)
+  //   .then()
+  // }
  
 
   return (
@@ -22,8 +27,9 @@ function BrandsSection(props) {
         {brands.length
           ? brands.map((brand) => (
               <Link
-              //  to={{pathname:"/brandproduct"}}
-               to="/brandproduct"
+              //  onClick={()=> handleGet(brand.brand_name)}
+               to={`/products/${brand.brand_name.toLowerCase()}`}
+              // to='/brandproduct'
                 key={brand.id}
                 className="shadow-2xl  rounded shadow-slate-600">
                 <div className="card-body bg-red-100 p-2  ">

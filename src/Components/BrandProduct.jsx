@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 
 function BrandProduct() {
   const loadedProducts = useLoaderData()
   const [products, setProducts] = useState(loadedProducts)
 
-// useEffect(() => {
-//   const filterProducts = loadedProducts.filter(item => item.brand.toLowerCase() === 'google' );
-//   setProducts(filterProducts)
-// }, [])
+
+  const {brand} = useParams()
+
+  console.log(products)
+
 
 
 
@@ -103,7 +104,7 @@ function BrandProduct() {
                     </Link>
                       <Link
                         className="btn btn-accent"
-                        to={`/products/${product._id}`}>
+                        to={`/updateproducts/${product._id}`}>
                         <button className="uppercase">Update</button>
                       </Link>
      
@@ -121,35 +122,4 @@ function BrandProduct() {
 }
 
 export default BrandProduct;
-{/* <div className="card card-side justify-center items-center lg:flex-row flex-col shadow-xl bg-orange-600 bg-opacity-10 p-2 ">
-  <div className="lg:w-2/5 ">
-    <img
-      className="w-full h-[200px] "
-      src={
-        photo
-          ? photo
-          : "https://i.ibb.co/WtR37VL/images-q-tbn-ANd9-Gc-S2b-E-6-A33-O0-Kk-RRMm-HVNIYAu-Diu0ea-Of-y-RQ-usqp-CAU.jpg"
-      }
-    />
-  </div>
-  <div className="flex flex-row">
-    <div className="flex flex-col justify-center pl-2 space-y-2 ">
-      <h2 className="card-title">{name}</h2>
-      <p>Brand: {brand}</p>
-      <p className="text-sm">{description}</p>
-      <p className="">{type}</p>
-      <p className="">{price}</p> <span>rating: {rating}</span>
-    </div>
-    <div className=" card-body">
-      <div className="btn-group gap-2 btn-group-vertical">
-        <button className="btn btn-active">view</button>
-        <Link className="btn btn-accent" to={`/updatecoffee/${_id}`}>
-          <button className="uppercase">edit</button>
-        </Link>
-        <button className="btn btn-error" onClick={() => handleDel(_id)}>
-          delete
-        </button>
-      </div>
-    </div>
-  </div>
-</div>; */}
+

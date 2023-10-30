@@ -46,10 +46,12 @@ const router = createBrowserRouter([
         path:'/register',
         element:<Register></Register>
       },
-      {
-        path:'/brandproduct',
+      { 
+        // path:'/brandproduct',
+        path:'/products/:brand',
         element:<BrandProduct></BrandProduct>,
-        loader:()=>fetch('http://localhost:5000/products')
+        loader:({params})=>fetch(`http://localhost:5000/brandproducts/${params.brand}`)
+        // loader:()=>fetch('http://localhost:5000/products')
       },
       {
         path:'/details/:id',
@@ -57,7 +59,7 @@ const router = createBrowserRouter([
         element:<PrivateRoute><Details></Details></PrivateRoute>
       },
       {
-        path:`/products/:id`,
+        path:`/updateproducts/:id`,
         loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`),
         element:<PrivateRoute><Update></Update></PrivateRoute>
       }

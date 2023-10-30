@@ -40,7 +40,7 @@ function Update(props) {
                   confirmButtonText: "Cool",
                 });
               }
-              navigate('/brandproduct')
+              navigate('/')
             });
     }
   return (

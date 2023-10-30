@@ -8,6 +8,7 @@ function Details(props) {
   const { user } = useContext(AuthContext);
   const useremail = user.email
   const loadedProduct = useLoaderData();
+  console.log(loadedProduct)
   const { name, brand, price, description, type, rating, photo, } = loadedProduct;
   const cartInfo = { name, brand, price, description, type, rating, photo, useremail} 
 
