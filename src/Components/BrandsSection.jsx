@@ -11,10 +11,7 @@ function BrandsSection(props) {
       .then((data) => setBrands(data));
   }, []);
 
-  // const handleGet = (brand) => {
-  //   fetch(`http://localhost:5000/products/${brand}`)
-  //   .then()
-  // }
+
  
 
   return (
@@ -27,9 +24,8 @@ function BrandsSection(props) {
         {brands.length
           ? brands.map((brand) => (
               <Link
-              //  onClick={()=> handleGet(brand.brand_name)}
-               to={`/products/${brand.brand_name.toLowerCase()}`}
-              // to='/brandproduct'
+               to={`/brandproducts/${brand.brand_name.toLowerCase()}`}
+              // to='/brandproducts'
                 key={brand.id}
                 className="shadow-2xl  rounded shadow-slate-600">
                 <div className="card-body bg-red-100 p-2  ">

@@ -3,15 +3,8 @@ import Navbar from "./Navbar";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 
 function BrandProduct() {
-  const loadedProducts = useLoaderData()
-  const [products, setProducts] = useState(loadedProducts)
-
-
-  const {brand} = useParams()
-
-  console.log(products)
-
-
+  const products = useLoaderData()
+  // const [products, setProducts] = useState(loadedProducts)
 
 
   return (
@@ -73,6 +66,7 @@ function BrandProduct() {
       <h1 className="text-2xl md:text-4xl my-10 font-bold text-red-400 max-w-fit bg-red-500 rounded-xl mx-auto py-2 px-5 bg-opacity-10">
         Our All Available Products
       </h1>
+        {/* length: {products.length} */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {
           products.length ?
@@ -104,7 +98,7 @@ function BrandProduct() {
                     </Link>
                       <Link
                         className="btn btn-accent"
-                        to={`/updateproducts/${product._id}`}>
+                        to={`/products/${product._id}`}>
                         <button className="uppercase">Update</button>
                       </Link>
      

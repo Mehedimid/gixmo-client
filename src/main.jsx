@@ -35,7 +35,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/mycart',
-        loader:()=>fetch('http://localhost:5000/cart'),
+        loader:()=>fetch('https://gizmo-genix-server-py9z1adgm-mehedis-projects-aba2a00e.vercel.app/cart'),
         element:<PrivateRoute><MyCart></MyCart></PrivateRoute>
       },
       {
@@ -47,20 +47,19 @@ const router = createBrowserRouter([
         element:<Register></Register>
       },
       { 
-        // path:'/brandproduct',
-        path:'/products/:brand',
+        // path:'/brandproducts',
+        path:'/brandproducts/:brand',
         element:<BrandProduct></BrandProduct>,
-        loader:({params})=>fetch(`http://localhost:5000/brandproducts/${params.brand}`)
-        // loader:()=>fetch('http://localhost:5000/products')
+        loader:({params})=>fetch(`https://gizmo-genix-server-py9z1adgm-mehedis-projects-aba2a00e.vercel.app/brandproducts/${params.brand}`)
+        //  loader: () => fetch('https://gizmo-genix-server-py9z1adgm-mehedis-projects-aba2a00e.vercel.app/products')
       },
       {
         path:'/details/:id',
-        loader:({params})=>fetch(`http://localhost:5000/products/${params.id}`),
+        loader:({params})=>fetch(`https://gizmo-genix-server-py9z1adgm-mehedis-projects-aba2a00e.vercel.app/products/${params.id}`),
         element:<PrivateRoute><Details></Details></PrivateRoute>
       },
       {
-        path:`/updateproducts/:id`,
-        loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`),
+        path:`/products/:id`,
         element:<PrivateRoute><Update></Update></PrivateRoute>
       }
     ]

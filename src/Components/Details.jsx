@@ -7,13 +7,14 @@ import Swal from "sweetalert2";
 function Details(props) {
   const { user } = useContext(AuthContext);
   const useremail = user.email
-  const loadedProduct = useLoaderData();
-  console.log(loadedProduct)
+  const loadedProduct = useLoaderData()
+
   const { name, brand, price, description, type, rating, photo, } = loadedProduct;
   const cartInfo = { name, brand, price, description, type, rating, photo, useremail} 
 
   const handleAddCart = () => {
-    fetch(`http://localhost:5000/cart`,
+    console.log(cartInfo)
+    fetch(`https://gizmo-genix-server-u01g09b61-mehedis-projects-aba2a00e.vercel.app/cart` ,
     {
       method: "POST",
       headers: {

@@ -17,12 +17,11 @@ function MyCart(props) {
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
-      fetch(`http://localhost:5000/cart/${id}`, {
+      fetch(`https://gizmo-genix-server-u01g09b61-mehedis-projects-aba2a00e.vercel.app/cart/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
           if (data.deletedCount > 0) {
             Swal.fire("Deleted!", "Your file has been deleted.", "success");
             const remain = cards.filter((card) => card._id !== id);

@@ -1,13 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import Swal from "sweetalert2";
 import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 
-function Update(props) {
-    const loadedProduct = useLoaderData()
-    const {_id}= loadedProduct
+function Update() {
+    const [loadedproduct, setProduct] = useState({})
+    const {id}= useParams()
+    console.log(loadedproduct.name)
     const navigate = useNavigate()
 
+
+useEffect(()=>{
+  fetch(`https://gizmo-genix-server-py9z1adgm-mehedis-projects-aba2a00e.vercel.app/products/${id}`)
+  .then(res=>res.json())
+  .then(data=>setProduct(data))
+},[])
       
     const handleUpdate = e => {
         e.preventDefault()
@@ -22,7 +29,7 @@ function Update(props) {
         const product = {name, brand, price, description, type, rating, photo}
         console.log(product)
 
-        fetch(`http://localhost:5000/products/${_id}`, {
+        fetch(`https://gizmo-genix-server-py9z1adgm-mehedis-projects-aba2a00e.vercel.app/products/${id}`, {
             method: "PUT",
             headers: {
               "content-type": "application/json",
@@ -62,7 +69,7 @@ function Update(props) {
                 <h2 className="text-lg mb-2 text-slate-700">Name:</h2>
                 <input
                   required
-                  defaultValue={loadedProduct.name}
+                  defaultValue={loadedproduct.name}
                   type="text"
                   placeholder=" Name"
                   name="name"
@@ -76,7 +83,7 @@ function Update(props) {
                   type="text"
                   placeholder="your Brand"
                   name="brand"
-                  defaultValue={loadedProduct.brand}
+                  defaultValue={loadedproduct.brand}
                   className="border p-2  w-full border-red-400 rounded"
                 />
               </div>
@@ -90,7 +97,7 @@ function Update(props) {
                   type="text"
                   placeholder="Type"
                   name="type"
-                  defaultValue={loadedProduct.type}
+                  defaultValue={loadedproduct.type}
                   className="border p-2  w-full border-red-400 rounded"
                 />
               </div>
@@ -102,7 +109,7 @@ function Update(props) {
                   type="text"
                   placeholder="price"
                   name="price"
-                  defaultValue={loadedProduct.price}
+                  defaultValue={loadedproduct.price}
                   className="border p-2  w-full border-red-400 rounded"
                 />
               </div>
@@ -116,7 +123,7 @@ function Update(props) {
                   type="text"
                   placeholder="Type description"
                   name="description"
-                  defaultValue={loadedProduct.description}
+                  defaultValue={loadedproduct.description}
                   className="border p-2  w-full border-red-400 rounded"
                 />
               </div>
@@ -127,7 +134,7 @@ function Update(props) {
                   type="text"
                   placeholder="rating"
                   name="rating"
-                  defaultValue={loadedProduct.rating}
+                  defaultValue={loadedproduct.rating}
                   className="border p-2  w-full border-red-400 rounded"
                 />
               </div>
@@ -141,7 +148,7 @@ function Update(props) {
                   type="text"
                   placeholder="type photo url"
                   name="photo"
-                  defaultValue={loadedProduct.photo}
+                  defaultValue={loadedproduct.photo}
                   className="border p-2  w-full border-red-400 rounded"
                 />
               </div>
