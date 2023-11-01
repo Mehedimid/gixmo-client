@@ -1,11 +1,20 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Navbar from "../Components/Navbar";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../AuthProvider";
 
 function MyCart(props) {
+  const {user} = useContext(AuthContext)
+
   const loadedCards = useLoaderData();
   const [cards, setcards] = useState(loadedCards);
+   
+  useEffect(()=> {
+    const filterCards = loadedCards.filter(card => card.useremail == user.email)
+    setcards(filterCards)
+  },[])
+
 
   const handleDel = (id) => {
     Swal.fire({
