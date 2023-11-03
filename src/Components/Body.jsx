@@ -4,8 +4,8 @@ import Services from "./Services";
 
 function Body(props) {
   return (
-    <div className="md:mt-32 space-y-32 md:space-y-44 ">
-      <div>
+    <div className="md:mt-32 space-y-32 md:space-y-44 dark:bg-black">
+      <div className="">
         <BrandsSection></BrandsSection>
       </div>
 

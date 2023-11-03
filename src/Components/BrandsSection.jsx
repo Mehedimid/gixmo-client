@@ -17,7 +17,7 @@ function BrandsSection(props) {
   return (
 
 <>
-      <h1 className="text-2xl md:text-4xl my-10 font-bold text-red-400 max-w-fit bg-red-500 rounded-xl mx-auto py-2 px-5 bg-opacity-10">
+      <h1 className="text-2xl mb-6  md:text-4xl  font-bold text-red-400 max-w-fit pt-10 rounded-xl mx-auto py-2 px-5 bg-opacity-10">
         Our All Popular Brands
       </h1>
       <section className="grid grid-cols-1 md:grid-cols-3 gap-10 w-10/12  mx-auto ">
@@ -28,10 +28,10 @@ function BrandsSection(props) {
               // to='/brandproducts'
                 key={brand.id}
                 className="shadow-2xl  rounded shadow-slate-600">
-                <div className="card-body bg-red-100 p-2  ">
-                  <h2 className="card-title text-3xl">{brand.brand_name}</h2>
+                <div className="card-body bg-red-100  p-2  ">
+                  <h2 className="card-title dark:text-black text-3xl">{brand.brand_name}</h2>
                 </div>
-                <div className="card card-compact h-[200px] ">
+                <div className="card dark:bg-white card-compact h-[200px] ">
                   <figure>
                     <img
                       src={brand.brand_img}

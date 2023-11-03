@@ -1,8 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
 
 function Header(props) {
+  const [mode, setMode ] = useState('light')
+
+  const changeTheme = () => {
+    const html = document.documentElement
+
+    if(mode == 'light'){
+      html.classList.remove('light')
+      html.classList.add('dark')
+      setMode('dark')
+    }
+    if(mode == 'dark'){
+      html.classList.remove('dark')
+      html.classList.add('light')
+      setMode('light')
+    }
+
+  }
   return (
     <>
       <div
@@ -20,9 +37,10 @@ function Header(props) {
       </div>
 
       {/* banner div */}
-      <div className="relative text-white lg:flex justify-center my-auto h-[500px] ">
+      <div className="relative text-white lg:flex justify-center my-auto h-[67vh] ">
         <div className="hero-content text-center">
           <div className="max-w-md">
+          <button onClick={changeTheme} className=" my-3 btn-xs btn btn-accent">change mode</button>
             <h1 className="text-3xl md:text-5xl font-bold">The Ultimate Tech Showdown</h1>
             <p className=" py-3 text-sm md:text-base md:py-6">
 

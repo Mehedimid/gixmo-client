@@ -8,7 +8,7 @@ function Home(props) {
         <div>
             <Header></Header>
             
-           <div className='md:my-20'>
+           <div className='my-20'>
            <Body></Body>
            </div>
 

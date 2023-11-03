@@ -49,7 +49,7 @@ function Navbar(props) {
             </label>
             <ul
               tabIndex={0}
-              className="menu gap-2  text-black menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+              className="menu gap-2   menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
               {navlinks}
             </ul>
           </div>
