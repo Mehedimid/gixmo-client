@@ -1,19 +1,25 @@
 import React, { useContext, useEffect, useState } from "react";
 import Navbar from "../Components/Navbar";
-import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../AuthProvider";
+import axios from "axios";
+
+//    http://localhost:5000   
+//    efaj2019@gmail.com 
+//    http://localhost:5000
 
 function MyCart(props) {
+  const [cards, setcards] = useState([]);
   const {user} = useContext(AuthContext)
 
-  const loadedCards = useLoaderData();
-  const [cards, setcards] = useState(loadedCards);
-   
-  useEffect(()=> {
-    const filterCards = loadedCards.filter(card => card.useremail == user.email)
-    setcards(filterCards)
+  
+  useEffect(()=>{
+    fetch( `http://localhost:5000/cart?email=${user?.email}` , {withCredentials:true} )
+    .then(res=> res.json())
+    .then(data=>setcards(data))
   },[])
+
+ 
 
 
   const handleDel = (id) => {
@@ -67,6 +73,7 @@ function MyCart(props) {
                 <div className="flex flex-col justify-center pl-2 space-y-2 ">
                   <h2 className="card-title">{card.name}</h2>
                   <p>Brand: {card.brand}</p>
+                  <p>{card.useremail}</p>
                   <p className="text-sm">Description:{card.description}</p>
                   <p className="">price: {card.price}$</p>{" "}
                   <span>rating: {card.rating}*</span>

@@ -1,0 +1,146 @@
+[
+   
+    {
+    "name": "LG gram Style",
+    "brand": "lg",
+    "price": 30,
+    "description": "white steel",
+    "type": "laptop",
+    "rating": "4",
+    "photo": "https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/5d4b26e7-c4d1-48b9-91b9-85168620f4f1/16Z90RS-K_award_gallery_12_3000x3000"
+    },
+
+
+
+    {
+    "name": "galaxy tab s8",
+    "brand": "samsung",
+    "price":25 ,
+    "description": "white steel metal",
+    "type": "tablet",
+    "rating": "5",
+    "photo": "https://applegadgetsbd.com/_next/image?url=https%3A%2F%2Fadminapi.applegadgetsbd.com%2Fstorage%2Fmedia%2Fthumb%2F5034-93496.jpg&w=256&q=100"
+    },
+    {
+    "name": "Hoco EW13",
+    "brand": "google ",
+    "price":27 ,
+    "description": "white steel",
+    "type": "airpods",
+    "rating": "4",
+    "photo": "https://applegadgetsbd.com/_next/image?url=https%3A%2F%2Fadminapi.applegadgetsbd.com%2Fstorage%2Fmedia%2Fthumb%2FHoco-EW13-True-Wireless-Stereo-Headset-a-9333.jpg&w=256&q=100"
+    },
+    {
+    "name": "samsung s-22-ultra",
+    "brand": "samsung",
+    "price":40 ,
+    "description": "white steel metal",
+    "type": "phone",
+    "rating": "4.5",
+    "photo": "https://img.freepik.com/free-photo/new-smartphone-balancing-with-pebbles_23-2150296459.jpg?size=626&ext=jpg&uid=R109449898&ga=GA1.1.1656165048.1699715121&semt=sph"
+    },
+   
+    {
+    "name": "Sony WH-CH510",
+    "brand": "sony",
+    "price": 33,
+    "description": "Black On-Ear Bluetooth ",
+    "type": "headphone",
+    "rating": "4",
+    "photo": "https://www.ryanscomputers.com/storage/products/main/sony-wh-ch510-black-on-ear-bluetooth-11663835041.webp"
+    },
+    {
+    "name": "Google Pixels Buds 2",
+    "brand": "google ",
+    "price":35 ,
+    "description": "white steel",
+    "type": "airpods",
+    "rating": "4",
+    "photo": "https://cdn-kehhb.nitrocdn.com/iEJFLbwsQHQzpVjXnwXhzYxhRIedkADp/assets/images/optimized/rev-219362a/devtechnosys.com/insights/wp-content/uploads/2021/02/Google-Pixels-Buds-2.png"
+    },
+    {
+    "name": "Sony Bravia XR A80K ",
+    "brand": "sony",
+    "price": 45,
+    "description": "balck stil metal",
+    "type": "television",
+    "rating": "5",
+    "photo": "https://www.ryanscomputers.com/storage/products/main/sony-bravia-xr-a80k-55-inch-4k-uhd-oled-hdr-smart-11665400503.webp"
+    },
+
+    {
+    "name": "macbook air m2",
+    "brand": "apple",
+    "price": 100,
+    "description": "black aluminium",
+    "type": "laptop",
+    "rating": "4.5",
+    "photo": "https://applegadgetsbd.com/_next/image?url=https%3A%2F%2Fadminapi.applegadgetsbd.com%2Fstorage%2Fmedia%2Fthumb%2FMacBook-Air-M2-Midnight-8137.jpg&w=256&q=100"
+    },
+    {
+    "name": "iphone 15 pro max",
+    "brand": "apple",
+    "price": 120,
+    "description": "silver aluminium",
+    "type": "phone",
+    "rating": "4.5",
+    "photo": "https://adminapi.applegadgetsbd.com/storage/media/large/iPhone-15-Plus-(2)-(6)-5363.jpg"
+    },
+    {
+    "name": "macbook pro",
+    "brand": "apple",
+    "price": 32,
+    "description": "balck-diamond",
+    "type": "laptop",
+    "rating": "5",
+    "photo": "https://www.apple.com/v/macbook-pro-13/p/images/overview/hero_endframe__bsza6x4fldiq_large_2x.jpg"
+    },
+
+    {
+    "name": "oled77GK",
+    "brand": "lg",
+    "price":5 ,
+    "description": "balck",
+    "type": "television",
+    "rating": "4",
+    "photo": "https://www.lg.com/us/images/tvs/md08003935/350.jpg"
+    },
+    {
+    "name": "samsung s-22",
+    "brand": "samsung",
+    "price": 22,
+    "description": "balck-diamond",
+    "type": "phone",
+    "rating": "5",
+    "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN5O0N3le9JbgP4A6xGHp8Z6yWHl1K2G-f1A&usqp=CAU"
+    },
+    {
+    "name": "chromebook",
+    "brand": "google",
+    "price":21 ,
+    "description": "balck stil metal",
+    "type": "laptop",
+    "rating": "4",
+    "photo": "https://149367133.v2.pressablecdn.com/wp-content/uploads/2017/10/google-pixel-book-pro.jpg"
+    },
+   
+    {
+    "name": "Hisense 55",
+    "brand": "lg",
+    "price": 15,
+    "description": "balck-diamond",
+    "type": "television",
+    "rating": "5",
+    "photo": "https://www.butterflygroupbd.com/media/catalog/product/cache/b4a43b59585bd36d9ea3cb478fbe6259/h/i/hisense_43a6k_1_1.jpg"
+    },
+    
+    {
+    "name": " WF-XB700",
+    "brand": "sony",
+    "price":70 ,
+    "description": "balck",
+    "type": "airpods",
+    "rating": "3",
+    "photo": "https://audioxpress.com/assets/upload/images/1/20200402123145_Sony-WH-CH710N-WF-XB700-FrontWeb.jpg"
+    }
+    ]

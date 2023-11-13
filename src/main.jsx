@@ -35,8 +35,8 @@ const router = createBrowserRouter([
       },
       {
         path:'/mycart',
-        loader:()=>fetch('https://gizmo-genix-server-py9z1adgm-mehedis-projects-aba2a00e.vercel.app/cart'),
-        element:<PrivateRoute><MyCart></MyCart></PrivateRoute>
+        element:<PrivateRoute><MyCart></MyCart></PrivateRoute>,
+        
       },
       {
         path:'/login',
@@ -50,7 +50,7 @@ const router = createBrowserRouter([
         // path:'/brandproducts',
         path:'/brandproducts/:brand',
         element:<BrandProduct></BrandProduct>,
-        loader:({params})=>fetch(`https://gizmo-genix-server-py9z1adgm-mehedis-projects-aba2a00e.vercel.app/brandproducts/${params.brand}`)
+        // loader:({params})=>fetch(`https://gizmo-genix-server-py9z1adgm-mehedis-projects-aba2a00e.vercel.app/brandproducts/${params.brand}`)
         //  loader: () => fetch('https://gizmo-genix-server-py9z1adgm-mehedis-projects-aba2a00e.vercel.app/products')
       },
       {

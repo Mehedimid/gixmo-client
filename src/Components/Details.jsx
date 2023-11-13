@@ -13,7 +13,7 @@ function Details(props) {
   const cartInfo = { name, brand, price, description, type, rating, photo, useremail} 
 
   const handleAddCart = () => {
-    console.log(cartInfo)
+    // console.log(cartInfo)
     fetch(`https://gizmo-genix-server-u01g09b61-mehedis-projects-aba2a00e.vercel.app/cart` ,
     {
       method: "POST",
@@ -24,7 +24,7 @@ function Details(props) {
     })
     .then(res=>res.json())
     .then(data=> {
-      console.log(data)
+      // console.log(data)
       if(data.insertedId){
         Swal.fire({
           title: 'Success!!',

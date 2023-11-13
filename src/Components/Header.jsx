@@ -37,7 +37,7 @@ function Header(props) {
       </div>
 
       {/* banner div */}
-      <div className="relative text-white lg:flex justify-center my-auto h-[67vh] ">
+      <div className="relative text-white lg:flex justify-center my-auto h-[700px] md:h-[67vh] ">
         <div className="hero-content text-center">
           <div className="max-w-md">
           <button onClick={changeTheme} className=" my-3 btn-xs btn btn-accent">change mode</button>
