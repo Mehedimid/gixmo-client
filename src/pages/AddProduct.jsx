@@ -16,7 +16,7 @@ function AddProduct(props) {
    const product = {name, brand, price, description, type, rating, photo}
    console.log(product)
 
-   fetch('https://gizmo-genix-server-py9z1adgm-mehedis-projects-aba2a00e.vercel.app/products',
+   fetch('http://localhost:5000/products',
         {
           method: "POST",
           headers: {

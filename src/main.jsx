@@ -50,12 +50,12 @@ const router = createBrowserRouter([
         // path:'/brandproducts',
         path:'/brandproducts/:brand',
         element:<BrandProduct></BrandProduct>,
-        // loader:({params})=>fetch(`https://gizmo-genix-server-py9z1adgm-mehedis-projects-aba2a00e.vercel.app/brandproducts/${params.brand}`)
-        //  loader: () => fetch('https://gizmo-genix-server-py9z1adgm-mehedis-projects-aba2a00e.vercel.app/products')
+        // loader:({params})=>fetch(`http://localhost:5000/brandproducts/${params.brand}`)
+        //  loader: () => fetch('http://localhost:5000/products')
       },
       {
         path:'/details/:id',
-        loader:({params})=>fetch(`https://gizmo-genix-server-py9z1adgm-mehedis-projects-aba2a00e.vercel.app/products/${params.id}`),
+        loader:({params})=>fetch(`http://localhost:5000/products/${params.id}`),
         element:<PrivateRoute><Details></Details></PrivateRoute>
       },
       {
