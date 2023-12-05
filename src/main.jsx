@@ -47,11 +47,10 @@ const router = createBrowserRouter([
         element:<Register></Register>
       },
       { 
-        // path:'/brandproducts',
+
         path:'/brandproducts/:brand',
         element:<BrandProduct></BrandProduct>,
-        // loader:({params})=>fetch(`http://localhost:5000/brandproducts/${params.brand}`)
-        //  loader: () => fetch('http://localhost:5000/products')
+  
       },
       {
         path:'/details/:id',
