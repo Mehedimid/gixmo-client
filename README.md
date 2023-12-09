@@ -1,4 +1,4 @@
-Creating an eye-catching README.md for your GitHub repository is a great way to showcase your project, GizmoGenix, and attract potential users and contributors. Here's a sample README.md that you can use:
+
 
 # GizmoGenix - Your Ultimate Tech Shopping Destination
 
