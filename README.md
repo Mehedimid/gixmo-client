@@ -6,7 +6,9 @@
 
 GizmoGenix is an innovative E-commerce platform designed to provide tech enthusiasts with the latest and greatest technology and electronic products. From smartphones to laptops, from Google to Sony, we've got it all!
 
-🚀 Explore GizmoGenix: [Live Demo](https://brand-assignment-10.web.app/)
+🚀 Explore GizmoGenix: [Live website link](https://brand-assignment-10.web.app/)
+
+## server side: https://github.com/Mehedimid/shoforPothe_backEnd
 
 ## Features
 
