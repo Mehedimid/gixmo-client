@@ -18,7 +18,7 @@ function Navbar(props) {
       <NavLink to="/">Home</NavLink>
       <NavLink to="/addproduct">Add Product</NavLink>
       <NavLink to="/mycart">My Cart</NavLink>
-      <NavLink to="/login">Log In</NavLink>
+    
     </>
   );
   return (
@@ -76,11 +76,9 @@ function Navbar(props) {
               </button>
             </div>
           ) : (
-            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-            <div className="rounded-full">
-              <img className="bg-white" src={"https://i.ibb.co/kKjDBkF/profile.png"} />
-            </div>
-          </label>
+            
+             <NavLink to="/login">Log In</NavLink>
+        
           )}
         </div>
       </div>
